@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_food_log_app/views/add_food_ui.dart';
 
 class ShowAllFoodUi extends StatefulWidget {
   const ShowAllFoodUi({super.key});
@@ -10,6 +11,48 @@ class ShowAllFoodUi extends StatefulWidget {
 class _ShowAllFoodUiState extends State<ShowAllFoodUi> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Text(
+          'กินกันหลอก',
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: Center(
+        child: Column(
+          children: [
+            SizedBox(height: 40),
+            Image.asset(
+              'assets/images/logo.png',
+              width: 180,
+              height: 180,
+              fit: BoxFit.cover,
+            ),
+            SizedBox(height: 20),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddFoodUi(),
+            ),
+          );
+        },
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+        backgroundColor: Colors.red,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
   }
 }
